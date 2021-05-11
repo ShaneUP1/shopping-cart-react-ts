@@ -1,0 +1,19 @@
+.itemCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: black 1px solid;
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+}
+
+.itemImage {
+  width: 250px;
+  height: 300px;
+}
+
+.name {
+  margin: 0px;
+}
