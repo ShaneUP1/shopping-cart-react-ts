@@ -1,16 +1,17 @@
-import React, { MouseEventHandler } from 'react';
+import React, { MouseEventHandler, useContext } from 'react';
 import ItemDisplay from './ItemDisplay';
 import fruits from '../../Data/fruit-data.js';
 import styles from './ProductPage.module.css';
+import { CartContext } from '../../state/CartContext';
 
-const ProductPage: React.FC = () => {
+interface Props {
+  handleClick: MouseEventHandler<HTMLButtonElement>
+}
 
-  const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
-    const element = e.currentTarget as HTMLButtonElement
-    const value = element.value
-    
-  }
+const ProductPage: React.FC <Props> = ({handleClick}) => {
+  
 
+  
   const fruitElements = fruits.map(fruit => (
     <li key={fruit.id}
         style={{listStyleType: 'none'}}

@@ -3,6 +3,7 @@ import styles from './ItemDisplay.module.css';
 
 interface Props {
   fruit: {name: string,
+    id: string,
   image: string,
   description: string,
   price: number},
@@ -18,7 +19,7 @@ const ItemDisplay: React.FC<Props> = ({fruit, handleClick}) => {
       <h1 className={styles.name}>{fruit.name}</h1>
       <h3>${adjustedPrice}</h3>
       <p>{fruit.description}</p>
-      <button value={fruit.name} onClick={handleClick} >Add</button>
+      <button value={fruit.id} onClick={handleClick} >Add</button>
     </div>
   )
 }

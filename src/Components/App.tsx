@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Main from '../Container/Main';
 import './App.css';
-import ProductPage from './Products/ProductPage';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import CartPage from './Cart/CartPage';
+import Header from './Header/Header';
+import { CartProvider, useUpdateCart } from '../state/CartContext';
 
-function App() {
+const App: React.FC = () => {
+  const [cart, setCart] = useUpdateCart<ITc();
   return (
     <>
-      <ProductPage />
+      <Router>
+        <CartProvider>
+          <Header />
+            <Switch>
+              <Route path='/' exact component={Main} />
+              <Route path='/cart' exact component={CartPage} />
+            </Switch>
+        </CartProvider>
+      </Router>
     </>
   );
 }
