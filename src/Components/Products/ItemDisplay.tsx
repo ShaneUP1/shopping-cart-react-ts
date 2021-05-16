@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import styles from './ItemDisplay.module.css';
 
 interface Props {
-  name: string,
+  fruit: {name: string,
+    id: string,
   image: string,
   description: string,
-  price: number
+  price: number},
+  handleClick: MouseEventHandler<HTMLButtonElement>
 }
 
-const ItemDisplay: React.FC<Props> = ({name, image, description, price}) => {
-  const adjustedPrice = price.toFixed(2)
+const ItemDisplay: React.FC<Props> = ({fruit, handleClick}) => {
+  const adjustedPrice = fruit.price.toFixed(2)
   
   return (
     <div className={styles.itemCard}>
-      <img className={styles.itemImage} src={`Assets/${image}`} alt={name} />
-      <h1 className={styles.name}>{name}</h1>
+      <img className={styles.itemImage} src={`Assets/${fruit.image}`} alt={fruit.name} />
+      <h1 className={styles.name}>{fruit.name}</h1>
       <h3>${adjustedPrice}</h3>
-      <p>{description}</p>
+      <p>{fruit.description}</p>
+      <button value={fruit.id} onClick={handleClick} >Add</button>
     </div>
   )
 }

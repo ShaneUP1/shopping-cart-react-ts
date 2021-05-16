@@ -5,13 +5,13 @@
   align-items: center;
   border: black 1px solid;
   width: 300px;
+  height: 450px;
   margin: 10px;
   text-align: center;
 }
 
 .itemImage {
   width: 250px;
-  height: 300px;
 }
 
 .name {
